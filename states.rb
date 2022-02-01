@@ -1,211 +1,71 @@
-#Hash full of all the states info
-states = {
-  :AL => {
-    :name => "Alabama",
-    :nickname => "The Cotton State",
-    :year_founded => 1819
-  }, :AK => {
-    :name => "Alaska",
-    :nickname => "The Last Frontier",
-    :year_founded => 1959
-  }, :AZ => {
-    :name => "Arizona",
-    :nickname => "The Copper State",
-    :year_founded => 1912
-  }, :AR => {
-    :name => "Arkansas",
-    :nickname => "The Land of Opportunity",
-    :year_founded => 1836
-  }, :CA => {
-    :name => "California",
-    :nickname => "The Golden State",
-    :year_founded => 1850
-  }, :CO => {
-    :name => "Colorado",
-    :nickname => "The Centennial State",
-    :year_founded => 1876
-  }, :CT => {
-    :name => "Connecticut",
-    :nickname => "The Constitution State",
-    :year_founded => 1788
-  }, :DE => {
-    :name => "Delaware",
-    :nickname => "The First State",
-    :year_founded => 1787
-  }, :FL => {
-    :name => "Florida",
-    :nickname => "The Sunshine State",
-    :year_founded => 1845
-  }, :GA => {
-    :name => "Georgia",
-    :nickname => "The Peach State",
-    :year_founded => 1788
-  }, :HI => {
-    :name => "Hawaii",
-    :nickname => "The Aloha State",
-    :year_founded => 1959
-  }, :ID => {
-    :name => "Idaho",
-    :nickname => "The Gem State",
-    :year_founded => 1890
-  }, :IL => {
-    :name => "Illinois",
-    :nickname => "The Prairie State",
-    :year_founded => 1818
-  }, :IN => {
-    :name => "Indiana",
-    :nickname => "The Hoosier State",
-    :year_founded => 1816
-  }, :IA => {
-    :name => "Iowa",
-    :nickname => "The Hawkeye State",
-    :year_founded => 1846
-  }, :KS => {
-    :name => "Kansas",
-    :nickname => "The Sunflower State",
-    :year_founded => 1861
-  }, :KY => {
-    :name => "Kentucky",
-    :nickname => "The Bluegrass State",
-    :year_founded => 1792
-  }, :LA => {
-    :name => "Louisiana",
-    :nickname => "The Pelican State",
-    :year_founded => 1812
-  }, :ME => {
-    :name => "Maine",
-    :nickname => "The Pine Tree State",
-    :year_founded => 1820
-  }, :MD => {
-    :name => "Maryland",
-    :nickname => "The Old Line State",
-    :year_founded => 1788
-  }, :MA => {
-    :name => "Massachusetts",
-    :nickname => "The Bay State",
-    :year_founded => 1788
-  }, :MI => {
-    :name => "Michigan",
-    :nickname => "The Great Lakes State",
-    :year_founded => 1837
-  }, :MN => {
-    :name => "Minnesota",
-    :nickname => "The State of 10,000 Lakes",
-    :year_founded => 1858
-  }, :MS => {
-    :name => "Mississippi",
-    :nickname => "The Magnolia State",
-    :year_founded => 1817
-  }, :MO => {
-    :name => "Missouri",
-    :nickname => "The Show Me State",
-    :year_founded => 1821
-  }, :MT => {
-    :name => "Montana",
-    :nickname => "The Treasure State",
-    :year_founded => 1889
-  }, :NE => {
-    :name => "Nebraska",
-    :nickname => "The Cornhusker State",
-    :year_founded => 1867
-  }, :NV => {
-    :name => "Nevada",
-    :nickname => "The Silver State",
-    :year_founded => 1864
-  }, :NH => {
-    :name => "New Hampshire",
-    :nickname => "The Granite State",
-    :year_founded => 1788
-  }, :NJ => {
-    :name => "New Jersey",
-    :nickname => "The Garden State",
-    :year_founded => 1787
-  }, :NM => {
-    :name => "New Mexico",
-    :nickname => "The Land of Enchantment",
-    :year_founded => 1912
-  }, :NY => {
-    :name => "New York",
-    :nickname => "The Empire State",
-    :year_founded => 1788
-  }, :NC => {
-    :name => "North Carolina",
-    :nickname => "The Tar Heel State",
-    :year_founded => 1789
-  }, :ND => {
-    :name => "North Dakota",
-    :nickname => "The Peace Garden State",
-    :year_founded => 1889
-  }, :OH => {
-    :name => "Ohio",
-    :nickname => "The Buckeye State",
-    :year_founded => 1803
-  }, :OK => {
-    :name => "Oklahoma",
-    :nickname => "The Sooner State",
-    :year_founded => 1907
-  }, :OR => {
-    :name => "Oregon",
-    :nickname => "The Beaver State",
-    :year_founded => 1859
-  }, :PA => {
-    :name => "Pennsylvania",
-    :nickname => "The Keystone State",
-    :year_founded => 1787
-  }, :RI => {
-    :name => "Rhode Island",
-    :nickname => "The Ocean State",
-    :year_founded => 1790
-  }, :SC => {
-    :name => "South Carolina",
-    :nickname => "The Palmetto State",
-    :year_founded => 1788
-  }, :SD => {
-    :name => "South Dakota",
-    :nickname => "The Coyote State",
-    :year_founded => 1889
-  }, :TN => {
-    :name => "Tennesse",
-    :nickname => "The Volunteer State",
-    :year_founded => 1796
-  }, :TX => {
-    :name => "Texas",
-    :nickname => "The Lone Star State",
-    :year_founded => 1845
-  }, :UT => {
-    :name => "Utah",
-    :nickname => "The Beehive State",
-    :year_founded => 1896
-  }, :VT => {
-    :name => "Vermont",
-    :nickname => "The Green Mountain State",
-    :year_founded => 1791
-  }, :VA => {
-    :name => "Virginia",
-    :nickname => "The Old Dominion",
-    :year_founded => 1788
-  }, :WA => {
-    :name => "Washington",
-    :nickname => "The Evergreen State",
-    :year_founded => 1889
-  }, :WV => {
-    :name => "West Virginia",
-    :nickname => "The Mountain State",
-    :year_founded => 1863
-  }, :WI => {
-    :name => "Wisconsin",
-    :nickname => "The Badger State",
-    :year_founded => 1848
-  }, :WY => {
-    :name => "Wyoming",
-    :nickname => "The Equality State",
-    :year_founded => 1890
-  }
-}
+#States Class with state information
+class States
+  attr_accessor :abbr, :name, :nickname, :year_founded
+  def initialize(abbr, name, nickname, year_founded)
+    @abbr = abbr
+    @name = name
+    @nickname = nickname
+    @year_founded = year_founded
+  end
+end
+#Stands for name and state information
+$states_array = [
+  $al = States.new("AL", "Alabama", "The Cotton State", 1819),
+  $ak = States.new("AK", "Alaska", "The Last Frontier", 1959),
+  $az = States.new("AZ", "Arizona", "The Copper State", 1912),
+  $ar = States.new("AR", "Arkansas", "The Land of Opportunity", 1836),
+  $ca = States.new("CA", "California", "The Golden State", 1850),
+  $co = States.new("CO", "Colorado", "The Centennial State", 1876),
+  $ct = States.new("CT", "Connecticut", "The Constitution State", 1788),
+  $de = States.new("DE", "Delaware", "The First State", 1787),
+  $fl = States.new("FL", "Florida", "The Sunshine State", 1845),
+  $ga = States.new("GA", "Georgia", "The Peach State", 1788),
+  $hi = States.new("HI", "Hawaii", "The Aloha State", 1959),
+  $id = States.new("ID", "Idaho", "The Gem State", 1890),
+  $il = States.new("IL", "Illinois", "The Prairie State", 1818),
+  $in = States.new("IN", "Indiana", "The Hoosier State", 1816),
+  $ia = States.new("IA", "Iowa", "The Hawkeye State", 1846),
+  $ks = States.new("KS", "Kansas", "The Sunflower State", 1861),
+  $ky = States.new("KY", "Kentucky", "The Bluegrass State", 1792),
+  $la = States.new("LA", "Louisiana", "The Pelican State", 1812),
+  $me = States.new("ME", "Maine", "The Pine Tree State", 1820),
+  $md = States.new("MD", "Maryland", "The Old Line State", 1788),
+  $ma = States.new("MA", "Massachusetts", "The Bay State", 1788),
+  $mi = States.new("MI", "Michigan", "The Great Lakes State", 1837),
+  $mn = States.new("MN", "Minnesota", "The State of 10,000 Lakes", 1858),
+  $ms = States.new("MS", "Mississippi", "The Magnolia State", 1817),
+  $mo = States.new("MO", "Missouri", "The Show Me State", 1821),
+  $mt = States.new("MT", "Montana", "The Treasure State", 1889),
+  $ne = States.new("NE", "Nebraska", "The Cornhusker State", 1867),
+  $nv = States.new("NV", "Nevada", "The Silver State", 1864),
+  $nh = States.new("NH", "New Hampshire", "The Granite State", 1788),
+  $nj = States.new("NJ", "New Jersey", "The Garden State", 1787),
+  $nm = States.new("NM", "New Mexico", "The Land of Enchantment", 1912),
+  $ny = States.new("NY", "New York", "The Empire State", 1788),
+  $nc = States.new("NC", "North Carolina", "The Tar Heel State", 1789),
+  $nd = States.new("ND", "North Dakota", "The Peace Garden State", 1889),
+  $oh = States.new("OH", "Ohio", "The Buckeye State", 1803),
+  $ok = States.new("OK", "Oklahoma", "The Sooner State", 1907),
+  $or = States.new("OR", "Oregon", "The Beaver State", 1859),
+  $pa = States.new("PA", "Pennsylvania", "The Keystone State", 1787),
+  $ri = States.new("RI", "Rhode Island", "The Ocean State", 1790),
+  $sc = States.new("SC", "South Carolina", "The Palmetto State", 1788),
+  $sd = States.new("SD", "South Dakota", "The Coyote State", 1889),
+  $tn = States.new("TN", "Tennesse", "The Volunteer State", 1796),
+  $tx = States.new("TX", "Texas", "The Lone Star State", 1845),
+  $ut = States.new("UT", "Utah", "The Beehive State", 1896),
+  $vt = States.new("VT", "Vermont", "The Green Mountain State", 1791),
+  $va = States.new("VA", "Virginia", "The Old Dominion", 1788),
+  $wa = States.new("WA", "Washington", "The Evergreen State", 1889),
+  $wv = States.new("WV", "West Virginia", "The Mountain State", 1863),
+  $wi = States.new("WI", "Wisconsin", "The Badger State", 1848),
+  $wy = States.new("WY", "Wyoming", "The Equality State", 1890)
+]
 #Prompts the user to define the difficulty
 def diff
   puts "What difficulty would you like? (Easy, Medium, Hard)"
   difficulty = gets.chomp
+  #If Easy - 6 Lives Medium - 3 Lives Hard - 1 Life
   if difficulty == "Easy" or difficulty == "easy"
     return 6
   elsif difficulty == "Medium" or difficulty == "medium"
@@ -217,6 +77,14 @@ def diff
     diff()
   end
 end
+#Question Class gets called in question_array
+class Question
+  attr_accessor :prompt, :answer
+  def initialize(prompt, answer)
+    @prompt = prompt
+    @answer = answer
+  end
+end
 #Defines the main gameplay of the trivia game
 def gameplay
   #Lives are dependent on difficulty(diff) selected
@@ -224,35 +92,54 @@ def gameplay
   #Points variable
   points = 0
   puts "You have " + lives.to_s + " lives!"
-
-
-  def random_question
-    #Going to work a way to use a hash instead of two seperate arrays
-    $question_array = Array["Which state is known as the Evergreen State?", "What state is AZ?", "What state is CA?",
-    'What state is known as the Last Frontier?']
-    #random_question = question_array.shuffle.first
-    return $rand = $question_array.sample
+  #Creates and adds new Question objects to the question_array
+  $question_array = Array.new
+  for state in $states_array
+    $question_array.push(Question.new("What is the name of #{state.abbr}?", "#{state.name}"))
+    $question_array.push(Question.new("Which state is #{state.nickname}?", "#{state.name}"))
+    $question_array.push(Question.new("What is the abbreviation of #{state.name}?", "#{state.abbr}"))
+    $question_array.push(Question.new("What is the nickname of #{state.name}?", "#{state.nickname}"))
+    $question_array.push(Question.new("When was #{state.name} founded?", "#{state.year_founded}"))
   end
-  #If lives does not equal zero, let the game play out
+  #Generates a random question
+  def random_question()
+    $rand = $question_array.shuffle.first
+    #Takes Prompt and Answer from Question Object
+    $question = $rand.prompt
+    $answer = $rand.answer
+    return $question
+  end
+  #Repeats until lives deplete to 0
   while lives != 0
-    answer_array = Array["Washington", "Arizona", "California", "Alaska"]
-    ind = $question_array.find_index($rand)
+    puts "---------------------"
     puts random_question()
-    puts "!!!---" + $rand + "---!!!"
+    puts "---------------------"
     puts "What is your answer?"
+    puts "---------------------"
     #Takes answer(answer_response) and compares it to the correct answer
     answer_response = gets.chomp
-    print answer_array[$ind.to_i - 1]
-    if answer_response == answer_array[$ind.to_i - 1]
+    #If answer is right:
+    if answer_response == $answer.to_s
+      puts "---------------------"
       puts "You're right!"
       points += 10
       puts "You have " + points.to_s + " points!"
+      puts "---------------------"
+    #Else/If Answer is wrong
     else
       puts "That is wrong. You lose a life!"
+      puts "---------------------"
+      puts "The right answer is #{$answer.to_s}"
+      puts "---------------------"
       lives -= 1
       puts "You have " + lives.to_s + " lives left!"
+      puts "---------------------"
     end
-
+    #Lose Condition
+    if lives == 0
+      puts "You Lose! Feel Free to try again!"
+    end
+    #Win Condition
     if points == 100
       puts "You win!"
       break
