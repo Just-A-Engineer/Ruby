@@ -1,5 +1,6 @@
 # Ruby Directory
-=================================
+=============================</br>
+
 This is a newer directory for me, but I'm absolutely <b>loving</b> it so far. I've run into a few issues here and there. I'm willing to outline a few in this README file.
 
 ##Here is some information about the states.rb file.
