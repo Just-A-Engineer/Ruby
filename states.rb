@@ -224,28 +224,33 @@ def gameplay
   #Points variable
   points = 0
   puts "You have " + lives.to_s + " lives!"
-  #Going to work a way to use a hash instead of two seperate arrays
-  question_array = Array["Which state is known as the Evergreen State?", "What state is AZ?", "What state is CA?",
-  'What state is known as the Last Frontier?']
-  answer_array = Array["Washington", "Arizona", "California", "Alaska"]
-  random_question = question_array.sample
-  ind = question_array.find_index(random_question)
+
+
+  def random_question
+    #Going to work a way to use a hash instead of two seperate arrays
+    $question_array = Array["Which state is known as the Evergreen State?", "What state is AZ?", "What state is CA?",
+    'What state is known as the Last Frontier?']
+    #random_question = question_array.shuffle.first
+    return $rand = $question_array.sample
+  end
   #If lives does not equal zero, let the game play out
   while lives != 0
-    puts random_question
+    answer_array = Array["Washington", "Arizona", "California", "Alaska"]
+    ind = $question_array.find_index($rand)
+    puts random_question()
+    puts "!!!---" + $rand + "---!!!"
     puts "What is your answer?"
     #Takes answer(answer_response) and compares it to the correct answer
     answer_response = gets.chomp
-    if answer_response == answer_array[ind]
+    print answer_array[$ind.to_i - 1]
+    if answer_response == answer_array[$ind.to_i - 1]
       puts "You're right!"
       points += 10
       puts "You have " + points.to_s + " points!"
-      puts random_question
     else
       puts "That is wrong. You lose a life!"
       lives -= 1
       puts "You have " + lives.to_s + " lives left!"
-      puts random_question
     end
 
     if points == 100
