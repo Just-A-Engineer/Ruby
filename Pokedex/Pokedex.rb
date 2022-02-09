@@ -18,7 +18,7 @@ def run
         poke = get_pokemon(user_input)
         #Pokemon Name, Weight, Height, and Generation
         mon_name = $mon.name
-        mon_weight = ($mon.weight * 0.220462).to_i
+        mon_weight = ($mon.weight * 0.220462).to_i #(Hectograms to Pounds)
         mon_height = ($mon.height * 3.93701).to_i #(Decimeters to Inches)
         #Hard coded way to get generation of pokemon
         if user_input <= 151.to_s and user_input > 0.to_s
