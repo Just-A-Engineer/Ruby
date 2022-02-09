@@ -18,3 +18,9 @@ This is a newer directory for me, but I'm absolutely <b>loving</b> it so far. I'
 - It is just not as well documented as more *up-to-date* frameworks.</br>
 - But I still worked through it and got my tests to all pass and not throw any errors. </br>
 - A big issue I ran into was following tutorials that didn't suit my laptop and/or version of Ruby that I was using. So, I simply decided to do what all developers do when in danger. Google it! But in all seriousness, I'm pretty proud of myself for getting this to work with little to no help from outside sources. 
+
+## Some information about the Pokedex repository
+- One of the biggest issues that I ran into with this project was the fact that it was my first time working with API's for quite a while and the first time ever with Ruby. 
+- This was an issue because, I didn't really remember how to connect an API, especially in gem form. But, I learned by using my previous projects that I just needed to require it and it would solve quite a *few* of my issues. 
+- It was pretty fun to be able to use the PokeApi.get command, and use it to my advantage to grab most of the information throughout the code. 
+- This has really opened my eyes to the world of API's and I am planning on working with API's more as the future goes on. Let me know what you think of my code! 
