@@ -73,7 +73,7 @@ $states_array = [
 def diff
   puts "What difficulty would you like? (Easy, Medium, Hard)"
   difficulty = gets.chomp
-  #If Easy - 6 Lives Medium - 3 Lives Hard - 1 Life
+  #If Easy - 6 $lives Medium - 3 $lives Hard - 1 Life
   if difficulty == "Easy" or difficulty == "easy"
     return 6
   elsif difficulty == "Medium" or difficulty == "medium"
@@ -85,13 +85,13 @@ def diff
     diff()
   end
 end
-#Defines the main gameplay of the trivia game
-def gameplay
-  #Lives are dependent on difficulty(diff) selected
-  lives = diff
+#Defines the main main_gameplay of the trivia game
+def main_gameplay
+  #$lives are dependent on difficulty(diff) selected
+  $lives = diff
   #Points variable
-  points = 0
-  puts "You have " + lives.to_s + " lives!"
+  $points = 0
+  puts "You have " + $lives.to_s + " lives!"
   #Creates and adds new Question objects to the question_array
   $question_array = Array.new
   for state in $states_array
@@ -102,15 +102,17 @@ def gameplay
     $question_array.push(Question.new("When was #{state.name} founded?", "#{state.year_founded}"))
   end
   #Generates a random question
-  def random_question()
+  def random_question
     $rand = $question_array.shuffle.first
     #Takes Prompt and Answer from Question Object
     $question = $rand.prompt
     $answer = $rand.answer
     return $question
   end
-  #Repeats until lives deplete to 0
-  while lives != 0
+end
+
+def question_asking
+  while $lives != 0
     puts "---------------------"
     puts random_question()
     puts "---------------------"
@@ -122,8 +124,8 @@ def gameplay
     if answer_response == $answer.to_s
       puts "---------------------"
       puts "You're right!"
-      points += 10
-      puts "You have " + points.to_s + " points!"
+      $points += 10
+      puts "You have " + $points.to_s + " points!"
       puts "---------------------"
     #Else/If Answer is wrong
     else
@@ -131,16 +133,21 @@ def gameplay
       puts "---------------------"
       puts "The right answer is #{$answer.to_s}"
       puts "---------------------"
-      lives -= 1
-      puts "You have " + lives.to_s + " lives left!"
-      puts "---------------------"
+      $lives -= 1
+      if $lives == 1
+        puts "You have " + $lives.to_s + " life left!"
+        puts "---------------------"
+      else
+        puts "You have " + $lives.to_s + " lives left!"
+        puts "---------------------"
+      end
     end
     #Lose Condition
-    if lives == 0
+    if $lives == 0
       puts "You Lose! Feel Free to try again!"
     end
     #Win Condition
-    if points == 100
+    if $points == 100
       puts "You win!"
       break
     end
@@ -154,7 +161,8 @@ def user_choice
   #Handles User Response to question asking if they would like to play
   if user_response == "yes" or user_response == "Yes"
     puts "Great! Let's play!"
-    gameplay()
+    main_gameplay()
+    question_asking()
   elsif user_response == "no" or user_response == "No"
     puts "Okay! Have a good day."
   else
