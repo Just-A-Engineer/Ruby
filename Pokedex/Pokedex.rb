@@ -13,7 +13,7 @@ def run
     #Gets user input to see which pokemon they would like information on
     user_input = (gets.chomp).to_i
     #Until user decides to exit the Pokedex, it keeps running this function
-    while user_input != "exit"
+    while user_input != 1234
         #Uses get_pokemon() method to grab the pokemon the user chooses
         poke = get_pokemon(user_input)
         #Pokemon Name, Weight, Height, and Generation
@@ -48,7 +48,7 @@ def run
         puts "------------------------"
         puts "This pokemon is from #{mon_gen}"
         puts "------------------------"
-        puts "Put in another number (Or type exit to leave the app):"
+        puts "Put in another number (Or type 1234 to leave the app):"
         puts "------------------------"
         user_input = (gets.chomp).to_i
     end
