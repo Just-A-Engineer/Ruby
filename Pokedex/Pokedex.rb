@@ -1,14 +1,15 @@
 require "poke-api-v2"
 #Grabs pokemon from PokeApi using the .get method
 def get_pokemon(pokemon)
-    $mon = PokeApi.get(pokemon: pokemon)
+    $monster = PokeApi.get(pokemon: pokemon)
 end
 #Run method contains most of the code that runs the Pokedex
 def run 
     #Welcomes User and asks them to choose a pokemon number
+    puts "------------------------"
     puts "Welcome to the Pokedex!"
     puts "------------------------"
-    puts "Please enter the number/ID of the Pokemon you'd like info on: "
+    puts "Please enter the number/ID of the Pokemon you'd like info on (Or type 1234 to exit the app): "
     puts "------------------------"
     #Gets user input to see which pokemon they would like information on
     user_input = (gets.chomp).to_i
@@ -17,9 +18,9 @@ def run
         #Uses get_pokemon() method to grab the pokemon the user chooses
         poke = get_pokemon(user_input)
         #Pokemon Name, Weight, Height, and Generation
-        mon_name = $mon.name
-        mon_weight = ($mon.weight * 0.220462).to_i #(Hectograms to Pounds)
-        mon_height = ($mon.height * 3.93701).to_i #(Decimeters to Inches)
+        mon_name = $monster.name
+        mon_weight = ($monster.weight * 0.220462).to_i #(Hectograms to Pounds)
+        mon_height = ($monster.height * 3.93701).to_i #(Decimeters to Inches)
         #Hard coded way to get generation of pokemon
         if user_input > 0 and user_input <= 151
             mon_gen = "Generation I"
@@ -48,10 +49,27 @@ def run
         puts "------------------------"
         puts "This pokemon is from #{mon_gen}"
         puts "------------------------"
-        puts "Put in another number (Or type 1234 to leave the app):"
+        puts "Put in another number/ID (Or type 1234 to leave the app):"
         puts "------------------------"
+        #Prompts user to re-enter a pokemon ID
         user_input = (gets.chomp).to_i
     end
 end
-#Runs the run method/function 
-run()
+#Asks user if they would like to use the application
+puts "Hello there! Would you like to use the Pokedex? (y/n)"
+#Function to check what the app_decision is equal to
+def app_choice
+    app_decision = gets.chomp
+    #If statement checking response of app_decision
+    #If app_decision == "y" run the app
+    if app_decision == "y"
+        run()
+    elsif app_decision == "n"
+        puts "Have a great day! Thanks for taking a look."
+    else 
+        puts "Not a valid input. Try again."
+        app_choice()
+    end
+end
+#Runs beginning method to start the process
+app_choice()
