@@ -1,4 +1,4 @@
-#States Class with state information
+#States Class with state information gets called in states_array
 class States
   attr_accessor :abbr, :name, :nickname, :year_founded
   def initialize(abbr, name, nickname, year_founded)
@@ -6,6 +6,14 @@ class States
     @name = name
     @nickname = nickname
     @year_founded = year_founded
+  end
+end
+#Question Class gets called in question_array
+class Question
+  attr_accessor :prompt, :answer
+  def initialize(prompt, answer)
+    @prompt = prompt
+    @answer = answer
   end
 end
 #Stands for name and state information
@@ -77,14 +85,6 @@ def diff
     diff()
   end
 end
-#Question Class gets called in question_array
-class Question
-  attr_accessor :prompt, :answer
-  def initialize(prompt, answer)
-    @prompt = prompt
-    @answer = answer
-  end
-end
 #Defines the main gameplay of the trivia game
 def gameplay
   #Lives are dependent on difficulty(diff) selected
@@ -146,16 +146,21 @@ def gameplay
     end
   end
 end
-
 #Prompts the user if they would like to play or not
 puts "Would you like to play some trivia? (Yes/No)"
-user_response = gets.chomp
-#Handles User Response to question asking if they would like to play
-if user_response == "yes" or user_response == "Yes"
-  puts "Great! Let's play!"
-  gameplay()
-elsif user_response == "no" or user_response == "No"
-  puts "Okay! Have a good day."
-else
-  puts "That is not a valid response."
+#Handles user_response
+def user_choice 
+  user_response = gets.chomp
+  #Handles User Response to question asking if they would like to play
+  if user_response == "yes" or user_response == "Yes"
+    puts "Great! Let's play!"
+    gameplay()
+  elsif user_response == "no" or user_response == "No"
+    puts "Okay! Have a good day."
+  else
+    puts "That is not a valid response."
+    user_choice()
+  end
 end
+#Calls initial starting method user_choice()
+user_choice()
