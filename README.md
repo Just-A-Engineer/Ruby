@@ -24,3 +24,5 @@ This is a newer directory for me, but I'm absolutely <b>loving</b> it so far. I'
 - This was an issue because, I didn't really remember how to connect an API, especially in gem form. But, I learned by using my previous projects that I just needed to require it and it would solve quite a *few* of my issues. 
 - It was pretty fun to be able to use the PokeApi.get command, and use it to my advantage to grab most of the information throughout the code. 
 - This has really opened my eyes to the world of API's and I am planning on working with API's more as the future goes on. Let me know what you think of my code! 
+- A newer issue I just ran into, would be a bug where you type in a lower number, as in single digits. It would return the incorrect generation of Pokemon. I solved this by adjusting it to accept only integers using *.to_i* method. Now to exit, all you need to type is *1234*.
+
