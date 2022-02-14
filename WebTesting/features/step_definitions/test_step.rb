@@ -16,3 +16,6 @@ end
 Then('I should also see {string}') do |string|
     page.has_css?(".nextaction__top__headline", text: string)
 end
+Then('I should be able to find {string}') do |string|
+    page.has_css?(".link__text color--default modal--link modal--cta", text: string)
+end
