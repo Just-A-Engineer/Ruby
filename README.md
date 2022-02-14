@@ -10,7 +10,7 @@ This is a newer directory for me, but I'm absolutely <b>loving</b> it so far. I'
 
 ## Some information about the Hangman.rb file.
 - I haven't ran into too many issues as of quite yet. </br>
-- An issue I think I might run into is bringing in the words.txt file.</br>
+- I did run into a slight issue bringing in the words.txt file. I was unable to select a single word from the array, it kept throwing errors at me. But, once I realized it would be easier to just define a new variable for each part of the array selection. It made it quite a bit easier.</br>
 - It's also quite a bit simpler than my states.rb file. So less issues.
 
 ## Some information about the WebTesting repository.
