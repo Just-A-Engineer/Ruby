@@ -26,3 +26,10 @@ This is a newer directory for me, but I'm absolutely <b>loving</b> it so far. I'
 - This has really opened my eyes to the world of API's and I am planning on working with API's more as the future goes on. Let me know what you think of my code! 
 - A newer issue I just ran into, would be a bug where you type in a lower number, as in single digits. It would return the incorrect generation of Pokemon. I solved this by adjusting it to accept only integers using *.to_i* method. Now to exit, all you need to type is *1234*.
 
+## Quite a bit of information about the WebAutomation repository
+- I ran into some issues working with this. It was probably the project that took the longest. 
+- It could be because I was working on it so off and on. But it took me a solid week. I just had to learn so many new things. 
+- I am currently working with StackOverflow and (my best friend) Google, to find a way for me to be able to streamline the whole process a bit more. 
+- I'm planning on creating a web scraping project in the near future, and I will be using that to coincide with this project. Through a multitude of ways. 
+- One of the biggest issues I ran into was the fact that I couldn't figure out how to write to a file and append each thing on top of each other. I really struggled with that for a few hours. I tried doing the *File.read* function that I use in the *data_write* function. However, that didn't append it properly. It just added it all onto the same line. But once I found the *open(file, 'w') do |f|* function, it made things so much easier. 
+- After I found out and learned about all of the different ways to write to other files, it has opened up a whole new world for me. This along with API's and what I've learned about those as well. I feel I can make some pretty beefy and cool projects. 
