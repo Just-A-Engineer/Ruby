@@ -39,12 +39,16 @@ open(test_file, 'w') do |f|
     f.puts step_def
 end
 
-data1 = File.read(test_file) 
-filtered_data1 = data1.sub! "pending", "visit string" 
+def data_write(file, initial, substitution)
+    data = File.read(file)
+    filtered_data = data.sub! initial, substitution
 
-File.open(test_file, "w") do |f|
-  f.write(filtered_data1)
+    File.open(file, "w") do |f|
+        f.write(filtered_data)
+    end
 end
+
+data_write(test_file, "pending", "visit string")
 
 puts "-----------------------"
 puts "Take a second to look in the Website."
@@ -53,24 +57,8 @@ puts "What is the selector containing the #{then_name.to_s}?"
 puts "-----------------------"
 selector = gets.chomp
 
-data2 = File.read(test_file) 
-filtered_data2 = data2.sub! "pending", "page.has_css?('#{selector}')" 
-
-File.open(test_file, "w") do |f|
-  f.write(filtered_data2)
-end
+data_write(test_file, "pending", "page.has_css?('#{selector}')")
 
 shell = `powershell.exe #{"cucumber"}`
 
 puts shell
-#Output information and print it to the console and run the webTestAuto Application
-
-#Goal of Whole WebAutomation app is to ask the user to input information and to create a web app tester. 
-
-#For example: 
-#What website would you like to test? 
-#Input: aetna.com
-#What would you like to test?
-#Seeing the header "SAMPLE"
-
-#Create and input information into the features file within WebAutomation/WebTestAuto/features
