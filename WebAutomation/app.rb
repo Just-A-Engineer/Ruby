@@ -1,37 +1,68 @@
 #Prompt the user to input information regarding their test. 
-featureFile = "features/testing.feature"
-testFile = "features/step_definitions/test_step.rb"
+feature_file = "features/testing.feature"
+test_file = "features/step_definitions/test_step.rb"
 
+puts "-----------------------"
 puts "What would you like the name of your feature to be?"
-featureName = gets.chomp
+feature_name = gets.chomp
+puts "-----------------------"
 
 puts "Add some info about the scenario below!"
-featureInfo = gets.chomp
+feature_info = gets.chomp
+puts "-----------------------"
 
 puts "What is the scenario you would like to test for first?"
-scenarioName = gets.chomp
+scenario_name = gets.chomp
+puts "-----------------------"
 
 puts "What URL would you like to be testing?"
-urlPrompt = gets.chomp
+url_prompt = gets.chomp
+puts "-----------------------"
 
 puts "What should you see once you visit the URL?"
-thenName = gets.chomp
+then_name = gets.chomp
+puts "-----------------------"
 
-open(featureFile, 'w') do |f|
-    f.puts "Feature: #{featureName}"
-    f.puts "    #{featureInfo}"
-    f.puts "    Scenario: #{scenarioName}"
-    f.puts "        Given I visit '#{urlPrompt}'"
-    f.puts "        Then I should see #{thenName}"
+open(feature_file, 'w') do |f|
+    f.puts "Feature: #{feature_name}"
+    f.puts "    #{feature_info}"
+    f.puts "    Scenario: #{scenario_name}"
+    f.puts "        Given I visit '#{url_prompt}'"
+    f.puts "        Then I should see #{then_name}"
 end
 
-shellOutput = `powershell.exe #{"cucumber"}`
+shell_output = `powershell.exe #{"cucumber"}`
 
-stepDef = shellOutput.slice(423, 673)
+step_def = shell_output.slice(441, 673)
 
-open(testFile, 'w') do |f|
-    f.puts stepDef
+open(test_file, 'w') do |f|
+    f.puts step_def
 end
+
+data1 = File.read(test_file) 
+filtered_data1 = data1.sub! "pending", "visit string" 
+
+File.open(test_file, "w") do |f|
+  f.write(filtered_data1)
+end
+
+puts "-----------------------"
+puts "Take a second to look in the Website."
+puts "-----------------------"
+puts "What is the selector containing the #{then_name.to_s}?"
+puts "-----------------------"
+selector = gets.chomp
+
+data2 = File.read(test_file) 
+filtered_data2 = data2.sub! "pending", "page.has_css?('#{selector}')" 
+
+File.open(test_file, "w") do |f|
+  f.write(filtered_data2)
+end
+
+shell = `powershell.exe #{"cucumber"}`
+
+puts shell
 #Output information and print it to the console and run the webTestAuto Application
 
 #Goal of Whole WebAutomation app is to ask the user to input information and to create a web app tester. 
